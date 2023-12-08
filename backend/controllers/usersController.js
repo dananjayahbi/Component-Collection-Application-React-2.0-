@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 
 //Register user
 const registerUser = async (req, res) => {
-  const { username, mobile, email, role, password, status } = req.body;
+  const { username, email, password } = req.body;
 
   // Check if user with the same username or email already exists
   const existingUser = await Users.findOne({
@@ -23,11 +23,8 @@ const registerUser = async (req, res) => {
   // Add user
   const user = await Users.create({
     username,
-    mobile,
     email,
-    role,
     password: hashedPwd,
-    status,
   });
 
   if (user) {
@@ -110,17 +107,13 @@ const getNewToken = async (req, res) => {
 
 //Get the user
 const getUser = async (req, res) => {
-  const { _id, username, mobile, email, role, password, status } =
-    await Users.findById(req.user.id);
+  const { _id, username, email } =
+    await Users.findById(req.params.id);
 
   res.status(200).json({
     id: _id,
     username,
-    mobile,
-    email,
-    role,
-    password,
-    status,
+    email
   });
 };
 
@@ -138,15 +131,12 @@ const getAllUsers = async (req, res) => {
 //Update User
 const updateUser = async (req, res) => {
   try {
-    const { username, mobile, email, role, password, status } = req.body;
+    const { username, email, password} = req.body;
 
     let updateData = {
       username,
-      mobile,
       email,
-      role,
       password,
-      status,
     };
 
     if (password && typeof password === "string") {

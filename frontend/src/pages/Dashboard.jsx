@@ -3,6 +3,14 @@ import { Layout } from "antd";
 import SideMenu from "../partials/SideMenu";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "../pages/Home";
+import Components from "../pages/Components";
+import ComponentCategories from "../pages/ComponentCategories";
+import LearningNodes from "../pages/LearningNodes";
+import LearningNodeCategories from "../pages/LearningNodeCategories";
+import RefImages from "../pages/RefImages";
+import RefImagesCategories from "../pages/RefImagesCategories";
+import Users from "../pages/Users";
+import SiteSettings from "../pages/SiteSettings";
 
 const { Content } = Layout;
 
@@ -40,7 +48,15 @@ const Dashboard = () => {
       <Layout>
         <Content style={{ padding: "24px" }}>
           <Routes>
-            <Route path="/" element={<Home />} /> 
+            <Route path="/" element={<Home />} />
+            <Route path="/components" element={<Components />} />
+            <Route path="/componentCategories" element={<ComponentCategories />} />
+            <Route path="/learningNodes" element={<LearningNodes />} /> 
+            <Route path="/learningNodesCategories" element={<LearningNodeCategories />} /> 
+            <Route path="/refImages" element={<RefImages />} /> 
+            <Route path="/refImagesCategories" element={<RefImagesCategories />} /> 
+            <Route path="/users" element={<Users />} /> 
+            <Route path="/siteSettings" element={<SiteSettings />} /> 
           </Routes>
         </Content>
       </Layout>
