@@ -46,7 +46,7 @@ const Dashboard = () => {
     <Layout style={{ minHeight: "100vh" }}>
       <SideMenu />
       <Layout>
-        <Content style={{ padding: "24px" }}>
+        <Content style={{ padding: "50px" }}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/components" element={<Components />} />
