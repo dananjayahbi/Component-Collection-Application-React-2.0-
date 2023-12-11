@@ -187,7 +187,7 @@ const AddComponentModal = () => {
             </Title>
             <Divider style={{ backgroundColor: "#abaead" }} />
 
-            <Form.Item label="Language" name={`codes[${index}].language`}>
+            <Form.Item label="Language" style={{marginTop:"-40px"}} name={`codes[${index}].language`}>
               <Select
                 placeholder="Select Language"
                 onChange={(value) =>
