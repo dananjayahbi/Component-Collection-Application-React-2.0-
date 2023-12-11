@@ -18,7 +18,7 @@ router.post("/register", registerUser);
 router.post("/login", login);
 
 //GET USER
-router.get("/getUser", protect, getUser);
+router.get("/getUser/:id", getUser);
 
 // GET ALL USERS
 router.get("/getAllUsers", getAllUsers);

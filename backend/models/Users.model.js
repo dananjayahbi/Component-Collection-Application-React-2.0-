@@ -8,22 +8,11 @@ const newUser = new Schema(
       type: String,
       required: true,
     },
-    mobile: {
-      type: Number,
-    },
     email: {
       type: String,
       required: true,
     },
-    role: {
-      type: String,
-      required: true,
-    },
     password: {
-      type: String,
-      required: true,
-    },
-    status: {
       type: String,
       required: true,
     },

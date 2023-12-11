@@ -18,8 +18,6 @@ app.use("/Categories", require("./routes/ComponentCategoriesRoutes"));
 app.use("/ideaCategories", require("./routes/CPIdeaCategoryRoutes"));
 app.use("/ideas", require("./routes/CPIdeasRoutes"));
 app.use("/users", require("./routes/UsersRoutes"));
-app.use("/roles", require("./routes/RolesRoutes"));
-app.use("/rolesPermissions", require("./routes/RolesPermissionsRoutes"));
 app.use("/learningNodes", require("./routes/LearningNodesRoutes"));
 
 app.listen(PORT, () => {
