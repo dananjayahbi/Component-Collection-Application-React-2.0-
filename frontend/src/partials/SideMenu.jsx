@@ -66,7 +66,7 @@ const SideMenu = () => {
       collapsible
       collapsed={collapsed}
       onCollapse={() => setCollapsed(!collapsed)}
-      width={256}
+      width={288}
       style={{ minHeight: "100vh" }}
       breakpoint="md"
       collapsedWidth={0}
