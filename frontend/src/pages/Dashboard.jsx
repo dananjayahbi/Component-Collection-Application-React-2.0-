@@ -6,7 +6,6 @@ import Home from "../pages/Home";
 import Components from "../pages/Components";
 import ComponentCategories from "../pages/ComponentCategories";
 import LearningNodes from "../pages/LearningNodes";
-import LearningNodeCategories from "../pages/LearningNodeCategories";
 import RefImages from "../pages/RefImages";
 import RefImagesCategories from "../pages/RefImagesCategories";
 import Users from "../pages/Users";
@@ -52,7 +51,6 @@ const Dashboard = () => {
             <Route path="/components" element={<Components />} />
             <Route path="/componentCategories" element={<ComponentCategories />} />
             <Route path="/learningNodes" element={<LearningNodes />} /> 
-            <Route path="/learningNodesCategories" element={<LearningNodeCategories />} /> 
             <Route path="/refImages" element={<RefImages />} /> 
             <Route path="/refImagesCategories" element={<RefImagesCategories />} /> 
             <Route path="/users" element={<Users />} /> 

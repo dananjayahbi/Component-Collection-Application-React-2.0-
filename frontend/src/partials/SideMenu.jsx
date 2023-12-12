@@ -40,9 +40,6 @@ const SideMenu = () => {
       case "3":
         navigate("/learningNodes");
         break;
-      case "4":
-        navigate("/learningNodesCategories");
-        break;
       case "5":
         navigate("/refImages");
         break;
@@ -66,7 +63,7 @@ const SideMenu = () => {
       collapsible
       collapsed={collapsed}
       onCollapse={() => setCollapsed(!collapsed)}
-      width={256}
+      width={288}
       style={{ minHeight: "100vh" }}
       breakpoint="md"
       collapsedWidth={0}
@@ -86,7 +83,6 @@ const SideMenu = () => {
           <Menu.Item key="1" icon={<CompassFilled/>}>Components</Menu.Item>
           <Menu.Item key="2" icon={<CompassOutlined  />}>Component Categories</Menu.Item>
           <Menu.Item key="3" icon={<BulbFilled  />}>Learning Nodes</Menu.Item>
-          <Menu.Item key="4" icon={<BulbOutlined  />}>Learning Node Categories</Menu.Item>
           <Menu.Item key="5" icon={<FileImageFilled  />}>Ref. Images</Menu.Item>
           <Menu.Item key="6" icon={<FileImageOutlined  />}>Ref. Images Categories</Menu.Item>
         </Menu.SubMenu>

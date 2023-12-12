@@ -17,6 +17,8 @@ app.use("/Components", require("./routes/ComponentsRoutes"));
 app.use("/Categories", require("./routes/ComponentCategoriesRoutes"));
 app.use("/ideaCategories", require("./routes/CPIdeaCategoryRoutes"));
 app.use("/ideas", require("./routes/CPIdeasRoutes"));
+app.use("/refImages", require("./routes/RefImagesRoutes"));
+app.use("/refImageCategories", require("./routes/RefImageCategoriesRoutes"));
 app.use("/users", require("./routes/UsersRoutes"));
 app.use("/learningNodes", require("./routes/LearningNodesRoutes"));
 
