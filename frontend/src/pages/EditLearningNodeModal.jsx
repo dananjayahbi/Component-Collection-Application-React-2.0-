@@ -10,10 +10,12 @@ import {
   MenuItem,
 } from "@mui/material";
 import axios from "axios";
-import { message } from 'antd';
+import { message, Input  } from 'antd';
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import MonacoEditor from "react-monaco-editor";
+
+const { TextArea } = Input;
 
 const EditLearningNodeModal = ({ node }) => {
   const formik = useFormik({
@@ -153,14 +155,14 @@ const EditLearningNodeModal = ({ node }) => {
                 />
               </Grid>
               <Grid item xs={12}>
-                <TextField
+                <TextArea
                   fullWidth
-                  //multiline
+                  rows={5}
                   id={`sections[${sectionIndex}].note`}
                   name={`sections[${sectionIndex}].note`}
                   label="Section Note"
                   value={section.note}
-                  //minRows={5}
+                  style={{fontSize: "16px"}}
                   onChange={formik.handleChange}
                 />
               </Grid>
@@ -277,14 +279,14 @@ const EditLearningNodeModal = ({ node }) => {
                     />
                   </Grid>
                   <Grid item xs={12}>
-                    <TextField
+                    <TextArea
                       fullWidth
-                      // multiline
+                      rows={5}
                       id={`sections[${sectionIndex}].codes[${codeIndex}].notes`}
                       name={`sections[${sectionIndex}].codes[${codeIndex}].notes`}
                       label="Code Notes"
                       value={code.notes}
-                      //minRows={5}
+                      style={{backgroundColor:"transparent"}}
                       onChange={formik.handleChange}
                     />
                   </Grid>

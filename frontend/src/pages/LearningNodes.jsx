@@ -131,11 +131,15 @@ const LearningNodes = () => {
                 Delete
               </Button>
             </div>
-            <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+
+            {/* This button is hidden for now. Add this functionality later */}
+            {/* <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
               <Button type="default" icon={<EyeOutlined />} onClick={() => handleView(node)}>
                 View
               </Button>
-            </div>
+            </div> */}
+
+
           </Card>
         ))}
       </div>
