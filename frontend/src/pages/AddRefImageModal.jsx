@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Modal, Form, Input, Button, message, Select } from 'antd';
+import { Modal, Form, Input, Button, Typography, message, Select } from 'antd';
 import axios from 'axios';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -13,6 +13,7 @@ const validationSchema = Yup.object().shape({
 
 const AddRefImageModal = () => {
   const [categories, setCategories] = useState([]);
+  const [imageUrlPreview, setImageUrlPreview] = useState("");
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -28,6 +29,11 @@ const AddRefImageModal = () => {
 
     fetchCategories();
   }, []);
+
+  const handleImageUrlBlur = (event) => {
+    const imageUrl = event.target.value;
+    setImageUrlPreview(imageUrl);
+  };
 
   const formik = useFormik({
     initialValues: {
@@ -63,8 +69,21 @@ const AddRefImageModal = () => {
             name="imageURL"
             value={formik.values.imageURL}
             onChange={formik.handleChange}
+            onBlur={(event) => {
+              formik.handleBlur(event);
+              handleImageUrlBlur(event);
+            }}
             placeholder='Enter Image URL'
           />
+          {imageUrlPreview && (
+            <div>
+              <img 
+                src={imageUrlPreview}
+                alt="Preview of the image URL"
+                style={{ width: "200px", marginTop: "10px" }}
+              />
+            </div>
+          )}
         </Form.Item>
         <Form.Item label="Category" required validateStatus={formik.errors.category ? "error" : ""} help={formik.errors.category}>
           <Select

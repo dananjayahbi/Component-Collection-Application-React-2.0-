@@ -55,6 +55,14 @@ const EditRefImageModal = ({ image }) => {
     },
   });
 
+  const handleChange = (event) => {
+    formik.handleChange(event);
+  };
+
+  const handleBlur = (event) => {
+    formik.handleBlur(event);
+  };
+
   return (
     <div>
       <Form layout="vertical">
@@ -62,9 +70,19 @@ const EditRefImageModal = ({ image }) => {
           <Input
             name="imageURL"
             value={formik.values.imageURL}
-            onChange={formik.handleChange}
+            onChange={handleChange}
+            onBlur={handleBlur}
             placeholder='Enter Image URL'
           />
+          {formik.values.imageURL && (
+            <div>
+              <img 
+                src={formik.values.imageURL}
+                alt="Preview"
+                style={{ width: "200px", marginTop:"10px"}}
+              />
+            </div>
+          )}
         </Form.Item>
         <Form.Item label="Category" required validateStatus={formik.errors.category ? "error" : ""} help={formik.errors.category}>
           <Select
