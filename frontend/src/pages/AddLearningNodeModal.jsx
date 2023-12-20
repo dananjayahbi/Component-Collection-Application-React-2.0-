@@ -24,7 +24,7 @@ export default function AddLearningNodeModal() {
     onSubmit: async (values) => {
       try {
         const response = await axios.post(
-          "http://localhost:5000/learningNodes/addLearningNode",
+          "https://cmsbe.codeloomstudios.live/learningNodes/addLearningNode",
           values
         );
 

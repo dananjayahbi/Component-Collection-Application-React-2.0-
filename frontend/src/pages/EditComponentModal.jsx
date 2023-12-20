@@ -88,7 +88,7 @@ export default function EditComponentModal({ FetchedComponent }) {
     onSubmit: async (values) => {
       try {
         const response = await axios.put(
-          `http://localhost:5000/Components/updateComponent/${FetchedComponent._id}`,
+          `https://cmsbe.codeloomstudios.live/Components/updateComponent/${FetchedComponent._id}`,
           values
         );
 
@@ -124,7 +124,7 @@ export default function EditComponentModal({ FetchedComponent }) {
     const fetchCategories = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/Categories/getAllCategories"
+          "https://cmsbe.codeloomstudios.live/Categories/getAllCategories"
         );
 
         if (response.status === 200) {

@@ -44,7 +44,7 @@ const Users = () => {
 
   const getUsers = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/users/getAllUsers');
+      const response = await axios.get('https://cmsbe.codeloomstudios.live/users/getAllUsers');
       setUsers(response.data);
     } catch (error) {
       console.error('Error fetching users:', error);
@@ -57,7 +57,7 @@ const Users = () => {
 
   const handleDelete = async (userId) => {
     try {
-      await axios.delete(`http://localhost:5000/users/deleteUser/${userId}`);
+      await axios.delete(`https://cmsbe.codeloomstudios.live/users/deleteUser/${userId}`);
       getUsers();
       message.success('User deleted successfully');
     } catch (error) {
@@ -110,7 +110,7 @@ const Users = () => {
     },
     onSubmit: async (values) => {
       try {
-        await axios.post('http://localhost:5000/users/register', {
+        await axios.post('https://cmsbe.codeloomstudios.live/users/register', {
           username: values.username,
           email: values.email,
           password: values.password,

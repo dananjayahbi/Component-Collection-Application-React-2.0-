@@ -17,7 +17,7 @@ const RefImagesCategories = () => {
     const fetchCategories = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/refImageCategories/getAllRefImageCategories"
+          "https://cmsbe.codeloomstudios.live/refImageCategories/getAllRefImageCategories"
         );
         setCategories(response.data);
       } catch (error) {
@@ -35,7 +35,7 @@ const RefImagesCategories = () => {
         // Call the delete category API
         axios
           .delete(
-            `http://localhost:5000/refImageCategories/deleteRefImageCategory/${categoryId}`
+            `https://cmsbe.codeloomstudios.live/refImageCategories/deleteRefImageCategory/${categoryId}`
           )
           .then(() => {
             // Remove the deleted category from the state

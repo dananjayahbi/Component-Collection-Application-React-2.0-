@@ -39,12 +39,12 @@ export default function Components() {
 
   useEffect(() => {
     // Fetch categories from the API
-    fetch("http://localhost:5000/Categories/getAllCategories")
+    fetch("https://cmsbe.codeloomstudios.live/Categories/getAllCategories")
       .then((response) => response.json())
       .then((data) => setCategories(data));
 
     // Fetch components from the API
-    fetch("http://localhost:5000/Components/getAllComponents")
+    fetch("https://cmsbe.codeloomstudios.live/Components/getAllComponents")
       .then((response) => response.json())
       .then((data) => {
         setComponents(data);
@@ -128,7 +128,7 @@ export default function Components() {
       onOk() {
         //Make a DELETE request to the API
         axios
-          .delete(`http://localhost:5000/Components/deleteComponent/${componentId}`)
+          .delete(`https://cmsbe.codeloomstudios.live/Components/deleteComponent/${componentId}`)
           .then((response) => {
             console.log("Component deleted successfully");
             message.success("Component deleted successfully");

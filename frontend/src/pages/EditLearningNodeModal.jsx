@@ -27,7 +27,7 @@ const EditLearningNodeModal = ({ node }) => {
       try {
         console.log(values)
         const response = await axios.put(
-          `http://localhost:5000/learningNodes/updateLearningNode/${node._id}`,
+          `https://cmsbe.codeloomstudios.live/learningNodes/updateLearningNode/${node._id}`,
           values
         );
 

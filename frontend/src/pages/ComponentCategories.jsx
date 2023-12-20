@@ -16,7 +16,7 @@ const ComponentCategories = () => {
     // Fetch categories from the server
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/Categories/getAllCategories');
+        const response = await axios.get('https://cmsbe.codeloomstudios.live/Categories/getAllCategories');
         setCategories(response.data);
       } catch (error) {
         console.error('Error fetching categories:', error);
@@ -31,7 +31,7 @@ const ComponentCategories = () => {
       title: 'Do you want to delete this category?',
       onOk() {
         // Call the delete category API
-        axios.delete(`http://localhost:5000/Categories/deleteCategory/${categoryId}`)
+        axios.delete(`https://cmsbe.codeloomstudios.live/Categories/deleteCategory/${categoryId}`)
           .then(() => {
             // Remove the deleted category from the state
             setCategories(categories.filter(category => category._id !== categoryId));

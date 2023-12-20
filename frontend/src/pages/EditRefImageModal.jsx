@@ -18,7 +18,7 @@ const EditRefImageModal = ({ image }) => {
     const fetchCategories = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/refImageCategories/getAllRefImageCategories"
+          "https://cmsbe.codeloomstudios.live/refImageCategories/getAllRefImageCategories"
         );
         setCategories(response.data);
       } catch (error) {
@@ -38,7 +38,7 @@ const EditRefImageModal = ({ image }) => {
     onSubmit: async (values) => {
       try {
         // Call the API to update the Ref. Image
-        await axios.put(`http://localhost:5000/refImages/updateRefImage/${image._id}`, values);
+        await axios.put(`https://cmsbe.codeloomstudios.live/refImages/updateRefImage/${image._id}`, values);
 
         // Trigger success callback and close the modal
         message.success("Ref. Image updated successfully");

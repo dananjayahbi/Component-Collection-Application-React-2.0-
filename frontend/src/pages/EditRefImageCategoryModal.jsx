@@ -14,7 +14,7 @@ const EditRefImageCategoryModal = ({ visible, categoryId, onCancel, onSuccess })
     onSubmit: async (values) => {
       try {
         // Call the API to update the category
-        await axios.put(`http://localhost:5000/refImageCategories/updateRefImageCategory/${categoryId}`, values);
+        await axios.put(`https://cmsbe.codeloomstudios.live/refImageCategories/updateRefImageCategory/${categoryId}`, values);
 
         // Trigger success callback and close the modal
         onSuccess();
@@ -32,7 +32,7 @@ const EditRefImageCategoryModal = ({ visible, categoryId, onCancel, onSuccess })
     // Fetch category details when the modal is opened
     const fetchCategoryDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/refImageCategories/getRefImageCategory/${categoryId}`);
+        const response = await axios.get(`https://cmsbe.codeloomstudios.live/refImageCategories/getRefImageCategory/${categoryId}`);
         setInitialValues(response.data);
         formik.setValues(response.data);
       } catch (error) {

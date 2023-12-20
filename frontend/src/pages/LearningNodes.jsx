@@ -22,7 +22,7 @@ const LearningNodes = () => {
   useEffect(() => {
     const fetchLearningNodes = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/learningNodes/getAllLearningNode');
+        const response = await axios.get('https://cmsbe.codeloomstudios.live/learningNodes/getAllLearningNode');
         setLearningNodes(response.data);
         setLoading(false);
       } catch (error) {
@@ -64,7 +64,7 @@ const LearningNodes = () => {
 
   const handleDelete = async (record) => {
     try {
-      await axios.delete(`http://localhost:5000/learningNodes/deleteLearningNode/${record._id}`);
+      await axios.delete(`https://cmsbe.codeloomstudios.live/learningNodes/deleteLearningNode/${record._id}`);
       setLearningNodes((prevNodes) => prevNodes.filter((node) => node._id !== record._id));
     } catch (error) {
       console.error('Error deleting learning node:', error);

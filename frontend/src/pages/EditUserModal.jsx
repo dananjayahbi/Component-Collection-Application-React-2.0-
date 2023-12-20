@@ -9,7 +9,7 @@ const EditUserModal = ({ visible, onCancel, userId, getUsers }) => {
     const fetchUserData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/users/getUser/${userId}`
+          `https://cmsbe.codeloomstudios.live/users/getUser/${userId}`
         );
         const userData = response.data;
         form.setFieldsValue({
@@ -33,7 +33,7 @@ const EditUserModal = ({ visible, onCancel, userId, getUsers }) => {
         delete values.confirmPassword;
       }
       await axios.put(
-        `http://localhost:5000/users/updateUser/${userId}`,
+        `https://cmsbe.codeloomstudios.live/users/updateUser/${userId}`,
         values
       );
       message.success("User updated successfully");

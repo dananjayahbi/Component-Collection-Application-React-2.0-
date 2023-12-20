@@ -23,7 +23,7 @@ const RefImages = () => {
     const fetchCategories = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/refImageCategories/getAllRefImageCategories"
+          "https://cmsbe.codeloomstudios.live/refImageCategories/getAllRefImageCategories"
         );
         setCategories(response.data);
       } catch (error) {
@@ -38,7 +38,7 @@ const RefImages = () => {
     const fetchImages = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/refImages/getAllRefImages"
+          "https://cmsbe.codeloomstudios.live/refImages/getAllRefImages"
         );
         setImages(response.data);
       } catch (error) {
@@ -69,7 +69,7 @@ const RefImages = () => {
 
   const handleDelete = async (recordID) => {
     try {
-      await axios.delete(`http://localhost:5000/refImages/deleteRefImage/${recordID}`);
+      await axios.delete(`https://cmsbe.codeloomstudios.live/refImages/deleteRefImage/${recordID}`);
       setImages((prevImages) => prevImages.filter((image) => image._id !== recordID));
     } catch (error) {
       console.error('Error deleting Ref. Image:', error);

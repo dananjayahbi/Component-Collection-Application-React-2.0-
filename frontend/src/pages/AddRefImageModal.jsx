@@ -19,7 +19,7 @@ const AddRefImageModal = () => {
     const fetchCategories = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/refImageCategories/getAllRefImageCategories"
+          "https://cmsbe.codeloomstudios.live/refImageCategories/getAllRefImageCategories"
         );
         setCategories(response.data);
       } catch (error) {
@@ -44,7 +44,7 @@ const AddRefImageModal = () => {
     onSubmit: async (values) => {
       try {
         // Call the API to add a new Ref. Image
-        await axios.post('http://localhost:5000/refImages/addRefImage', values);
+        await axios.post('https://cmsbe.codeloomstudios.live/refImages/addRefImage', values);
 
         // Trigger success callback and close the modal
         message.success("Ref. Image added successfully");

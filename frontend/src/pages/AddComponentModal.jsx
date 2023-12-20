@@ -27,7 +27,7 @@ const AddComponentModal = () => {
     const fetchCategories = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/Categories/getAllCategories"
+          "https://cmsbe.codeloomstudios.live/Categories/getAllCategories"
         );
         setCategories(response.data);
       } catch (error) {
@@ -68,7 +68,7 @@ const AddComponentModal = () => {
 
   const onSubmit = async (values) => {
     try {
-      await axios.post("http://localhost:5000/Components/addComponent", values);
+      await axios.post("https://cmsbe.codeloomstudios.live/Components/addComponent", values);
       message.success("Component added successfully");
       window.location.reload();
     } catch (error) {

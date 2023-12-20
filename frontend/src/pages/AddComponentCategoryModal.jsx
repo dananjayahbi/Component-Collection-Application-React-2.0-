@@ -12,7 +12,7 @@ const AddComponentCategoryModal = ({ visible, onCancel, onSuccess }) => {
     onSubmit: async (values) => {
       try {
         // Call the API to add a new category
-        const response = await axios.post('http://localhost:5000/Categories/addCategory', values);
+        const response = await axios.post('https://cmsbe.codeloomstudios.live/Categories/addCategory', values);
 
         // Trigger success callback and close the modal
         onSuccess(response.data);
